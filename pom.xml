@@ -19,15 +19,15 @@
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <parent>
-        <groupId>org.wso2</groupId>
-        <artifactId>wso2</artifactId>
-        <version>5</version>
+        <groupId>org.ballerinalang</groupId>
+        <artifactId>ballerinalang</artifactId>
+        <version>0.84</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.wso2.ballerina.connectors</groupId>
     <artifactId>connectors</artifactId>
-    <version>0.8.3-SNAPSHOT</version>
+    <version>0.85-SNAPSHOT</version>
     <name>Ballerina Connectors - Parent</name>
 
     <url>http://wso2.org</url>
@@ -119,6 +119,10 @@
                                     <filtering>true</filtering>
                                 </resource>
                                 <resource>
+                                    <directory>googlespreadsheet/src</directory>
+                                    <filtering>true</filtering>
+                                </resource>
+                                <resource>
                                     <directory>linkedin/src</directory>
                                     <filtering>true</filtering>
                                 </resource>
@@ -144,6 +148,10 @@
                                 </resource>
                                 <resource>
                                     <directory>amazonlambda/src</directory>
+                                    <filtering>true</filtering>
+                                </resource>
+                                <resource>
+                                    <directory>salesforcerest/src</directory>
                                     <filtering>true</filtering>
                                 </resource>
                                 <resource>
@@ -184,6 +192,10 @@
                                     <filtering>true</filtering>
                                 </resource>
                                 <resource>
+                                    <directory>googlespreadsheet/samples</directory>
+                                    <filtering>true</filtering>
+                                </resource>
+                                <resource>
                                     <directory>linkedin/samples</directory>
                                     <filtering>true</filtering>
                                 </resource>
@@ -205,6 +217,10 @@
                                 </resource>
                                 <resource>
                                     <directory>amazonlambda/samples</directory>
+                                    <filtering>true</filtering>
+                                </resource>
+                                <resource>
+                                    <directory>salesforcerest/samples</directory>
                                     <filtering>true</filtering>
                                 </resource>
                                 <resource>
@@ -305,7 +321,7 @@
         </plugins>
     </build>
     <properties>
-        <ballerina.version>0.8.3</ballerina.version>
+        <ballerina.version>0.84</ballerina.version>
         <mvn.exec.plugin.version>1.5.0</mvn.exec.plugin.version>
         <mvn.processor.plugin.version>2.2.4</mvn.processor.plugin.version>
         <mvn.resource.plugins.version>3.0.2</mvn.resource.plugins.version>
@@ -319,6 +335,6 @@
         <connectors.source.directory>${connectors.source.temp.dir}</connectors.source.directory>
         <connectors.source.temp.dir>${basedir}/target/extra-resources</connectors.source.temp.dir>
         <connectors.samples.dir>${basedir}/target/extra-samples</connectors.samples.dir>
-        <docerina.maven.plugin.version>0.8.1</docerina.maven.plugin.version>
+        <docerina.maven.plugin.version>0.84</docerina.maven.plugin.version>
     </properties>
 </project>
