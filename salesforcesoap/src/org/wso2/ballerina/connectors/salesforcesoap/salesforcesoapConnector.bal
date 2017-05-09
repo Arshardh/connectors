@@ -150,7 +150,7 @@ connector ClientConnector (string username, string password, string loginUrl, st
                        </urn:create>`;
 
         addFields(payload, fields, "/urn:create/urn:sObjects");
-
+	
         xml soapResponse = soap:ClientConnector.send(soapConnector, headers, payload, "''",
          serverUrl, soapVersion);
         if (isSessionExpired(soapResponse)) {
@@ -341,7 +341,7 @@ connector ClientConnector (string username, string password, string loginUrl, st
             serverUrl = xmls:getString(loginResponse, "/ns:loginResponse/ns:result/ns:serverUrl/text()", n);
         }
         headers[headerCount] = session;
-        xml payload = `<urn:queryMore>
+        xml payload = `<urn:queryMore xmlns:urn="urn:partner.soap.sforce.com">
                            <urn:queryLocator>${queryLocator}</urn:queryLocator>
                        </urn:queryMore>`;
         xml soapResponse = soap:ClientConnector.send(soapConnector, headers, payload, "''",
